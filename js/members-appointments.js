@@ -43,12 +43,8 @@
   let slots  = [];
   let step   = 0; // 0–4
 
-  const PHOTOS = [
-    "/images/our story people.jpg",
-    "/images/our story intro.jpg",
-    "/images/sharing.webp",
-    "/images/breeze-block-detail.webp",
-  ];
+  const PHOTOS = [...document.querySelectorAll("#appointmentTypePhotos [data-photo]")]
+    .map((el) => el.dataset.photo);
 
   const dateFormat     = new Intl.DateTimeFormat(undefined, { weekday: "long", day: "numeric", month: "long" });
   const timeFormat     = new Intl.DateTimeFormat(undefined, { hour: "numeric", minute: "2-digit" });
